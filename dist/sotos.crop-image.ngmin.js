@@ -201,7 +201,7 @@ angular.module('sotos.crop-image').directive('imageCrop', [
             if (this.w > 0 && this.h > 0) {
               // editCanvasCtx.drawImage(mainCanvas, this.x, this.y, this.w, this.h, this.x, this.y, this.w, this.h);
               viewCanvasCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-              srcCanvasCtx.drawImage(watermarkImage, mainCanvas.width-this.x, mainCanvas.height-this.y, this.w * ratio_width, this.h * ratio_width);
+              srcCanvasCtx.drawImage(watermarkImage, mainCanvas.width-this.w, mainCanvas.height-this.h, this.w * ratio_width, this.h * ratio_width);
               viewCanvasCtx.drawImage(srcCanvas, 0, 0, mainCanvas.width, mainCanvas.height);
             }
             // draw resize cubes
