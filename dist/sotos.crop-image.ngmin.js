@@ -387,8 +387,9 @@ angular.module('sotos.crop-image').directive('imageCrop', [
                   theSelection.drawWaterMarkImage();
                 } else {
                   //draw the image
+                  console.log(editCanvasCtx.canvas.width,mainCanvas.width, editCanvasCtx.canvas.height,mainCanvas.height);
                   viewCanvasCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-                  viewCanvasCtx.drawImage(srcCanvas, 0, 0, mainCanvas.width, mainCanvas.height);
+                  viewCanvasCtx.drawImage(srcCanvas, editCanvasCtx.canvas.width-mainCanvas.width, editCanvasCtx.canvas.height-mainCanvas.height, mainCanvas.width, mainCanvas.height);
                 }
               }
               if ($scope.cropOptions.watermarkType === 'text') {

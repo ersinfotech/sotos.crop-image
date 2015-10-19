@@ -1,7 +1,7 @@
 {
   "name": "sotos.crop-image",
   "version": "0.0.8",
-  "main": "dist/sotos.crop-image.min.js",
+  "main": "dist/sotos.crop-image.ngmin.js",
   "ignore": [
     "**/*.txt",
     "test,",
