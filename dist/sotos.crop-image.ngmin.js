@@ -551,6 +551,7 @@ angular.module('sotos.crop-image').directive('imageCrop', [
             $scope.cropImageSave()($scope.imageOut);
           });
           $scope.$on('cropImageShow', function () {
+            console.log(imageType);
             $scope.imageOut = srcCanvas.toDataURL(imageType);
           });
           $scope.$on('cropImage', self.getImage);
