@@ -197,6 +197,7 @@ angular.module('sotos.crop-image').directive('imageCrop', [
             editCanvasCtx.lineWidth = 2;
             editCanvasCtx.strokeRect(this.x, this.y, this.w, this.h);
             // draw part of original image
+            console.log(this.w, this.h, mainCanvas.width, mainCanvas.height);
             if (this.w > 0 && this.h > 0) {
               // editCanvasCtx.drawImage(mainCanvas, this.x, this.y, this.w, this.h, this.x, this.y, this.w, this.h);
               viewCanvasCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
@@ -387,9 +388,8 @@ angular.module('sotos.crop-image').directive('imageCrop', [
                   theSelection.drawWaterMarkImage();
                 } else {
                   //draw the image
-                  console.log(editCanvasCtx.canvas.width,mainCanvas.width, editCanvasCtx.canvas.height,mainCanvas.height);
                   viewCanvasCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-                  viewCanvasCtx.drawImage(srcCanvas, editCanvasCtx.canvas.width-mainCanvas.width, editCanvasCtx.canvas.height-mainCanvas.height, mainCanvas.width, mainCanvas.height);
+                  viewCanvasCtx.drawImage(srcCanvas, 0, 0, mainCanvas.width, mainCanvas.height);
                 }
               }
               if ($scope.cropOptions.watermarkType === 'text') {
