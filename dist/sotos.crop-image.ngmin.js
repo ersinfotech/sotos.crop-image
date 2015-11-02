@@ -498,6 +498,10 @@ angular.module('sotos.crop-image').directive('imageCrop', [
             mainCanvas.width = editCanvas.width;
             mainCanvas.height = editCanvas.height;
             self.drawScene();
+            if ($scope.cropOptions.onLoadImage)
+            {
+              $scope.cropOptions.onLoadImage(srcCanvas.toDataURL(imageType));
+            }
           };
           //on load image run function
           image.onload = function () {
