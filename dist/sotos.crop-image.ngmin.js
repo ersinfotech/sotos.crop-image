@@ -485,9 +485,9 @@ angular.module('sotos.crop-image').directive('imageCrop', [
             }
             //find ratio from canvas view to image
             ratio_width = image.width / $scope.cropOptions.viewSizeWidth;
-            if (image.width < image.height) {
-              ratio_width = image.height / $scope.cropOptions.viewSizeHeight;
-            }
+            // if (image.width < image.height) {
+            //   ratio_width = image.height / $scope.cropOptions.viewSizeHeight;
+            // }
             //set the size
             srcCanvas.width = image.width;
             srcCanvas.height = image.height;
